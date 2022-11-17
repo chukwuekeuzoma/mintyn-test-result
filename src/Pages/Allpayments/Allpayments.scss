@@ -1,42 +1,56 @@
-table {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
+.payments{
+  font-size: 36px;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+
+.table-letters{
+   margin-right:10px;
+   background: #7F8FA4;
+   padding:10px;
+   font-size: 12px;
+   border-radius: 100%;
+   color: #FFFFFF;
+   text-align: center;
+}
+
+.Reconcilled{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:1px;
+  border: 1px solid #CCCFD4;
+  border-radius: 30px;
+  // width: 120px;
+  // height: 33px;
+  color:#27AE60;
+
+  .t-circle{
+    width: 9px;
+    height: 9px;
+    background: #27AE60;
+    border-radius: 100%;
+    margin-right:5px;
   }
-  
-  table thead {
-    /* head takes the height it requires, 
-      and it's not scaled when table is resized */
-    flex: 0 0 auto;
-    width: calc(100% - 0.9em);
+}
+
+.Un-reconcilled{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:1px;
+  border: 1px solid #CCCFD4;
+  border-radius: 30px;
+  // width: 120px;
+  // height: 33px;
+  color: #7F8FA4;
+
+  .t-circle-un{
+    width: 9px;
+    height: 9px;
+    background: #C4C4C4;
+    border-radius: 100%;
+    margin-right:5px;
   }
-  
-  table tbody {
-    /* body takes all the remaining available space */
-    flex: 1 1 auto;
-    display: block;
-    overflow-y: scroll;
-    max-height: 300px;
-  }
-  
-  table tbody tr {
-    width: 100%;
-  }
-  
-  table thead,
-  table tbody tr {
-    display: table;
-    table-layout: fixed;
-  }
-  
-  td,
-  th {
-    padding: 5px;
-  }
-  
-  th {
-    background: white;
-  }
+}

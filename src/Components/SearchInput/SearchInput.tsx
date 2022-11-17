@@ -3,7 +3,7 @@ import "./SearchInput.scss";
 import SearchIcon from "../../Asset/Svg/Search.svg";
 
 interface Props {
-  getValue(): string;
+  getValue:() => string;
   text?: string;
 }
 

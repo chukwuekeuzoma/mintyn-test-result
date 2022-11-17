@@ -32,12 +32,14 @@
          color:#647787;
          font-size: 14px;
          margin-right:30px;
+         cursor: pointer;
        }
 
        .faq{
         color:#647787;
         font-size: 14px;
-        margin-right:30px
+        margin-right:30px;
+        cursor: pointer;
       }
 
     }
@@ -45,6 +47,7 @@
    .bell-container{
       position: relative;
       margin-right: 30px;
+      cursor: pointer;
       
       .color-circle{
         position: absolute;
@@ -76,6 +79,7 @@
      height:40px;
      border-radius: 100%;
      margin-right:30px;
+     cursor: pointer;
 
      .profile-pic{
         width:100%;

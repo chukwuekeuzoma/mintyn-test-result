@@ -6,6 +6,7 @@ import Uzoma from "../../Asset/Img/Uzoma.jpg";
 
 export default function Header() {
   const [terms, setTerms] = useState();
+ 
 
   return (
     <div className="header-main-container">

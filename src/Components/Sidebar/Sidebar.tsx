@@ -70,7 +70,11 @@ function Sidebar() {
         Reconcilled Orders
       </div>
       <div className="overview">
-        <img src={Merchentprofile} alt="overviewicon" className="overview-icon" />
+        <img
+          src={Merchentprofile}
+          alt="overviewicon"
+          className="overview-icon"
+        />
         Merchant Profile
       </div>
     </div>

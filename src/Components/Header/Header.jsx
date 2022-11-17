@@ -15,7 +15,6 @@ export default function Header() {
         <div className="SearchInput-container">
           <SearchInput
             text="Search..."
-            getValue={(e) => setTerms(e.target.value)}
           />
         </div>
       </div>

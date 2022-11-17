@@ -1,4 +1,4 @@
-import { Header } from "./Components"
+import { Header, Sidebar } from "./Components"
 
 
 function RouteWithLayout({ Layout, Component, ...rest }) {
@@ -12,7 +12,8 @@ function RouteWithLayout({ Layout, Component, ...rest }) {
 function App() {
   return (
     <>
-       <Header/>
+       <Header />
+       <Sidebar />
     </>
   );
 }

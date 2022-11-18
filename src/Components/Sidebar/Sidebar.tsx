@@ -9,6 +9,7 @@ import Pendingorders from "../../Asset/Svg/Pendingorders.svg";
 import Reconcilledorders from "../../Asset/Svg/Reconcilledorders.svg";
 import ReconcilledPaymentswallet from "../../Asset/Svg/ReconcilledPaymentswallet.svg";
 import UnReconcilledPaymentswallet from "../../Asset/Svg/UnReconcilledPaymentswallet.svg";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -20,26 +21,32 @@ function Sidebar() {
         <div>Overview</div>
       </div>
       <div className="main">Payments</div>
-      <div className="overview">
-        <img src={Allpayment} alt="overviewicon" className="overview-icon" />
-        All Payments
-      </div>
-      <div className="overview-one">
-        <img
-          src={ReconcilledPaymentswallet}
-          alt="overviewicon"
-          className="overview-icon-one"
-        />
-        Reconcilled Payments
-      </div>
-      <div className="overview-one">
-        <img
-          src={UnReconcilledPaymentswallet}
-          alt="overviewicon"
-          className="overview-icon-one"
-        />
-        Un - Reconcilled Payments
-      </div>
+      <Link to="/" className="links overview">
+        <div>
+          <img src={Allpayment} alt="overviewicon" className="overview-icon" />
+          All Payments
+        </div>
+      </Link>
+      <Link to="/reconcliepayment" className="links overview-one">
+        <div>
+          <img
+            src={ReconcilledPaymentswallet}
+            alt="overviewicon"
+            className="overview-icon-one"
+          />
+          Reconcilled Payments
+        </div>
+      </Link>
+      <Link to="/un-reconcliepayment" className="links overview-one">
+        <div>
+          <img
+            src={UnReconcilledPaymentswallet}
+            alt="overviewicon"
+            className="overview-icon-one"
+          />
+          Un - Reconcilled Payments
+        </div>
+      </Link>
       <div className="overview-one">
         <img
           src={Manualsettelment}

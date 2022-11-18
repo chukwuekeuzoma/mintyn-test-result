@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./Allpayments.scss";
 import {
   Table,
@@ -11,17 +11,52 @@ import {
 } from "@mui/material";
 import {Allpaymentsdata} from "../../Data";
 import Arrowdown from "../../Asset/Svg/ArrowDown.svg"
-import {SearchInput} from "../../Components"
+import {SearchInput,Pagination} from "../../Components"
 
 function Allpayments() {
    const [paymentTerms, setPaymentTerms] = useState("")
-
+   const [paymentData, setPaymentData] = useState([])
+   const [paymentDataTwo, setPaymentDataTwo] = useState([])
+   const [currentPage, setCurrentPage] = useState(1)
+   const [ postPerPage ] = useState(3)
    
+const paginatePayment = () => {
+  const indexOFLastPage = currentPage * postPerPage;
+  const indexoFFirstPage = indexOFLastPage - postPerPage;
+  setPaymentData(Allpaymentsdata.slice(indexoFFirstPage, indexOFLastPage))
+  setPaymentDataTwo(Allpaymentsdata.slice(indexoFFirstPage, indexOFLastPage))
+}
+
+ useEffect(()=>{
+  paginatePayment()
+ },[currentPage])
+ 
+ 
+  const satsCheckOne = [{name:"All", value:2 },{name:"Reconcilled", value:1},{name:"Unreconcilled",value:0}];
+
+  const fliterPayment = (satsCheck:number) => {
+       const checkFilterPayment = paymentData.filter((p:any) => satsCheck === 2 ? true : p.status === satsCheck)
+       setPaymentDataTwo(checkFilterPayment) 
+  }
+   
+  // change page 
+  const Paginate = (num:any) =>  setCurrentPage(num) 
+
+
   return (
     <>
     <div className="payments">Payments</div>
-      <div>
+      <div style={{display:"flex"}}>
           <SearchInput text="Search payments"  getValue={(e:any) => setPaymentTerms(e.target.value)}/>
+         <select
+             id="check"
+            onChange={(e)=>{fliterPayment(parseInt(e.target.value))}}
+         >
+         {satsCheckOne.map((stats,i)=>(
+         <option key={i} value={stats.value}>{stats.name}</option>
+        ))
+        }
+         </select>
       </div>
     <div>
       <TableContainer component={Paper}> 
@@ -37,11 +72,11 @@ function Allpayments() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {Allpaymentsdata.filter((val:any) => {
+            {paymentDataTwo.filter((val:any) => {
                if(paymentTerms === ""){
-                return val
+                return true
                }else if (val.country.toLowerCase().includes(paymentTerms.toLocaleLowerCase())){
-                return val
+                return true
                }
             }).map(({country,price,transactionNo,time,status}, index:number) => (
               <TableRow
@@ -60,8 +95,8 @@ function Allpayments() {
                 <TableCell align="right" style={{color:"#7F8FA4"}}>{transactionNo}</TableCell>
                 <TableCell align="right" style={{color:"#7F8FA4"}}>{time}</TableCell>
                 <TableCell align="right">
-                
-                {status === "true" ?
+
+                {status === 1 ?
                   <div className="Reconcilled">
                      <div className="t-circle"></div>
                      <div>Reconcilled</div>
@@ -81,6 +116,11 @@ function Allpayments() {
           </TableBody>
         </Table>
       </TableContainer>
+      <div className="pagination-container">
+
+         <div>Showing {currentPage} out of {Allpaymentsdata.length} entries</div>
+        <Pagination postPerPage={postPerPage} totalPosts={Allpaymentsdata.length} paginate={Paginate}/>
+      </div>
     </div>
     </>
   );

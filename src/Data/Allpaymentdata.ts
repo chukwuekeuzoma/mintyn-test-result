@@ -4,35 +4,35 @@ export const Allpaymentsdata = [
      price:"4000" ,
      transactionNo:"1234567",
      time:"12:15pm",
-     status:"true"
+     status:1
    },
    {
     country:"Togo",
     price:"2000" ,
     transactionNo:"1234567",
     time:"12:15pm",
-    status:"false"
+    status:0
   },
   {
     country:"Niger",
     price:"1000" ,
     transactionNo:"1234567",
     time:"12:15pm",
-    status:"true"
+    status:1
   },
   {
     country:"USA",
     price:"500" ,
     transactionNo:"1234567",
     time:"12:15pm",
-    status:"false"
+    status:0
   },
   {
     country:"Canada",
     price:"300" ,
     transactionNo:"1234567",
     time:"12:15pm",
-    status:"true"
+    status:1
   }
 ]
    

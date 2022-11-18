@@ -1,5 +1,5 @@
 import DashboardLayout from "./Layouts/DashboardLayout/DashboardLayout";
-import { Allpayments } from "./Pages"
+import { Allpayments,  ReconcilePayment, UnReconcilePayment } from "./Pages"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -19,6 +19,14 @@ function App() {
           <Route
             path="/"
             element={<RouteWithLayout Layout={DashboardLayout} Component={Allpayments} />}
+          />
+           <Route
+            path="/reconcliepayment"
+            element={<RouteWithLayout Layout={DashboardLayout} Component={ReconcilePayment}/>}
+          />
+          <Route
+            path="/un-reconcliepayment"
+            element={<RouteWithLayout Layout={DashboardLayout} Component={UnReconcilePayment }/>}
           />
         </Routes>
       </BrowserRouter>  

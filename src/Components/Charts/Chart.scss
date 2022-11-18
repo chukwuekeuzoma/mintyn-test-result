@@ -1,0 +1,11 @@
+.chart-container{
+    display: flex;
+    flex-direction: column;
+    padding-left:4px;
+    padding-right:4px;
+
+    .monthly{
+        justify-content: flex-start;
+        margin-bottom:2px;
+    }
+}

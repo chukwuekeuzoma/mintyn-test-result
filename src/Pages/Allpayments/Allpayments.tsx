@@ -18,7 +18,7 @@ function Allpayments() {
    const [paymentData, setPaymentData] = useState([])
    const [paymentDataTwo, setPaymentDataTwo] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
-   const [ postPerPage ] = useState(3)
+   const [ postPerPage ] = useState(4)
    
 const paginatePayment = () => {
   const indexOFLastPage = currentPage * postPerPage;

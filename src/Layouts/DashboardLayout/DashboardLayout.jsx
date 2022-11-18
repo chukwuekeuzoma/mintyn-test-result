@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Sidebar } from "../../Components";
+import { Header, Sidebar, Chart} from "../../Components";
 import "./DashboardLayuout.scss";
 
 function DashboardLayout({ children }) {
@@ -7,7 +7,11 @@ function DashboardLayout({ children }) {
     <>
       <Header />
       <Sidebar />
-      <div className="dasbard-sidebar-container">{children}</div>
+      <div className="dasbard-sidebar-container">
+        <Chart />
+        <br/>
+        {children}
+      </div>
     </>
   );
 }

@@ -17,12 +17,13 @@ import ReactPaginate from "react-paginate";
 function Allpayments() {
   const [paymentTerms, setPaymentTerms] = useState("");
   const [paymentData, setPaymentData] = useState([]);
-  const [paymentDataTwo, setPaymentDataTwo] = useState([]);
+  const [paymentDataTwo, setPaymentDataTwo] = useState<any[]>([]);
   //  const [currentPage, setCurrentPage] = useState(1)
   const [currentPage, setCurrentPage] = useState(0);
   const [postPerPage] = useState(4);
   const pagesVisited = postPerPage * currentPage;
   const pageCount = Math.ceil(Allpaymentsdata.length / postPerPage);
+  // paginate: (number: number) => number;
 
   const paginatePayment = () => {
     // const indexOFLastPage = currentPage * postPerPage;
@@ -158,7 +159,7 @@ function Allpayments() {
                 .map(
                   (
                     { country, price, transactionNo, time, status },
-                    index: number
+                    index
                   ) => (
                     <TableRow
                       key={index}
@@ -169,7 +170,7 @@ function Allpayments() {
                         scope="row"
                         style={{ display: "flex", alignItems: "center" }}
                       >
-                        <div className="table-letters">NG</div>
+                        <div className="table-letters">{country.charAt(0)}{country.charAt(1)}</div>
                         <div style={{ color: "#414042" }}>{country}</div>
                       </TableCell>
                       <TableCell align="right" style={{ color: "#7F8FA4" }}>

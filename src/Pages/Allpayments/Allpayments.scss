@@ -56,6 +56,44 @@
 }
 
 .pagination-container{
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
 }
+
+.paginate-container{
+  display: flex;
+  height: 29px;
+  list-style: none;
+  justify-content: flex-end;
+  align-items:center;
+  font-size: 13px;
+  color: #000000;
+}
+
+.paginate-container a{
+  margin: 0px;
+  padding: 5px;
+  border: 1px solid #CED0DA;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.paginate-container a:hover{
+  background: #1875F0;
+  color: #FFFFFF;
+}
+
+.paginate-active a{
+  background: #1875F0;
+  color: #FFFFFF;
+}
+
+.paginate-disabled a{
+  background: #646a72;
+  color: #FFFFFF;
+}
+
+
+
+

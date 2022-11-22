@@ -68,6 +68,27 @@ export const Allpaymentsdata = [
     transactionNo:"1234567",
     time:"12:15pm",
     status:1
+  },
+  {
+    country:"China",
+    price:"500" ,
+    transactionNo:"1234567",
+    time:"12:15pm",
+    status:1
+  },
+  {
+    country:"NewZeaLand",
+    price:"500" ,
+    transactionNo:"1234567",
+    time:"12:15pm",
+    status:1
+  },
+  {
+    country:"Russia",
+    price:"500" ,
+    transactionNo:"1234567",
+    time:"12:15pm",
+    status:1
   }
 ]
    
